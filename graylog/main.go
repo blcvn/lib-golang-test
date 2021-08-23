@@ -1,7 +1,7 @@
 package main
 
 import (
-	"sharding_accounting/test/graylog/gabs"
+	"lib-golang/graylog/gabs"
 	gelf "sharding_accounting/test/graylog/geft"
 	"time"
 )
