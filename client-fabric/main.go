@@ -6,11 +6,13 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"sharding_accounting/common"
-	"sharding_accounting/config"
-	"sharding_accounting/server/generator/fabricservice/fabric"
 	loyalty_fabric "sharding_accounting/server/generator/fabricservice/fabric"
 	"strings"
+
+	"sharding_accounting/server/generator/fabricservice/fabric"
+
+	"github.com/binhnt-teko/loyalty-lib-go/common"
+	"github.com/binhnt-teko/loyalty-lib-go/config"
 
 	pb "github.com/binhnt-teko/sharding_admin/schema/accounting"
 	"github.com/pkg/errors"
