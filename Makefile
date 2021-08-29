@@ -4,7 +4,7 @@ create-account: create-account-network create-account-existed create-account-mem
 
 update-account: update-account-state move-account
 
-trans-account: credit-trans transfer-trans
+trans-account: credit-trans transfer-trans not-same-transfer-trans
 
 create-account-network:
 	scripts/create-account-network.sh
@@ -27,3 +27,5 @@ credit-trans:
 
 transfer-trans:
 	scripts/transfer-trans.sh
+not-same-transfer-trans:
+	scripts/not-same-transfer-trans.sh
