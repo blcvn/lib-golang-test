@@ -55,21 +55,6 @@ func createAccount(trace_no string, account_id string) {
 
 	url := "http://localhost:8000/accounts/create"
 	method := "POST"
-	// request :=
-	// 	`{
-	// 	"trace_no": #trace_no,
-	// 	"type": "ACCOUNT_CREATE",
-	// 	"req_time": 1611037185225,
-	// 	"account": {
-	// 		"account_id": "#account_id",
-	// 		"state": "ACTIVE",
-	// 		"type": "NETWORK",
-	// 		"level": "LEVEL1",
-	// 		"branch_id": "2902"
-	// 	}
-	// }`
-	// request = strings.ReplaceAll(request, "#trace_no", trace_no)
-	// request = strings.ReplaceAll(request, "#account_id", account_id)
 	account := &pb.Account{
 		AccountId: account_id,
 		Balance:   0,
@@ -91,9 +76,6 @@ func createAccount(trace_no string, account_id string) {
 		fmt.Println(err)
 		return
 	}
-
-	// data := []byte(request)
-	// payload := strings.NewReader(request)
 
 	client := &http.Client{}
 	req, err := http.NewRequest(method, url, bytes.NewBuffer(data))
