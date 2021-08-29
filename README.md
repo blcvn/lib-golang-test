@@ -48,3 +48,4 @@ This is old mapping, please change to branchId which is mapping to `channel2` at
 
 1. Credit to network Accounts `make credit-trans`
 2. Create account network, create account member, credit to account network, transfer to account member and get balance both `make transfer-trans`
+3. Create account network, create account member, move account member to other channel, credit to account network, transfer to account member and get balance both `make not-same-transfer-trans`
