@@ -29,7 +29,10 @@ channel3:
    chaincode.lang: "golang"
    channel.id: "vnpay-channel-3"
 ```
-4. Start the generator `make start id=3`
+4. Please remember i using `03002` as branchId which mapping to `channel2`
+This is old mapping, please change to branchId which is mapping to `channel2` at your environment.
+
+5. Start the generator `make start id=3`
 
 ### Testing account
 1. make scripts directory +x `chmod +x scripts/*`
