@@ -21,34 +21,43 @@ func TestLimitRate() {
 	var wg sync.WaitGroup
 
 	numWorker := 5
-	queue := make(chan int, numWorker)
+	limitRequest := 10
+	queue := make(chan int, limitRequest)
 	fmt.Println("Start total of ", numWorker)
 	for i := 0; i < numWorker; i++ {
 		wg.Add(1)
 		go func(id int, queue chan int) {
-			defer wg.Done()
 			fmt.Println("Start worker number ", id)
+			wg.Done()
 			for msg := range queue {
-				fmt.Println("Send request from worker: ", id, msg)
-				accountId := fmt.Sprintf("Account.%d", msg)
-				traceId := fmt.Sprintf("Trace.%d", time.Now())
-				createAccount(traceId, accountId)
+				fmt.Printf("Worker %d received request %d\n", id, msg)
+
+				time.Sleep(1 * time.Second)
+				// accountId := fmt.Sprintf("Account.%d", msg)
+				// traceId := fmt.Sprintf("Trace.%d", time.Now())
+				// createAccount(traceId, accountId)
 			}
 
 		}(i, queue)
 	}
+	wg.Wait()
 
 	//Send message job
-	wg.Add(1)
-	go func() {
-		defer wg.Done()
-		maxRequest := 100
-		for i := 0; i < maxRequest; i++ {
+	maxRequest := 20
+	fmt.Printf("\nStart send %d requests\n", maxRequest)
+	for i := 0; i < maxRequest; i++ {
+		wg.Add(1)
+		go func(i int) {
+			defer wg.Done()
 			queue <- i
-		}
-	}()
+
+		}(i)
+	}
 
 	wg.Wait()
+
+	time.Sleep(5 * time.Second)
+
 	fmt.Println("Main: Completed")
 }
 func createAccount(trace_no string, account_id string) {
