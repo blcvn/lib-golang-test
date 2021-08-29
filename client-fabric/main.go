@@ -6,11 +6,12 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"sharding_accounting/common"
-	"sharding_accounting/config"
-	"sharding_accounting/server/generator/fabricservice/fabric"
-	loyalty_fabric "sharding_accounting/server/generator/fabricservice/fabric"
+	fabricHandler "sloyalty-client-app/app/service/fabricservice/handler"
+	fabricType "sloyalty-client-app/app/service/fabricservice/types"
 	"strings"
+
+	"github.com/binhnt-teko/loyalty-lib-go/common"
+	"github.com/binhnt-teko/loyalty-lib-go/config"
 
 	pb "github.com/binhnt-teko/sharding_admin/schema/accounting"
 	"github.com/pkg/errors"
@@ -79,12 +80,12 @@ func sendProposal(c *cli.Context) error {
 
 	fmt.Println("sendProposal: fabricConfigFile :  ", fabricConfigFile)
 
-	fabricConfig, err := loyalty_fabric.GetConfigFromFile(fabricConfigFile)
+	fabricConfig, err := fabricHandler.GetConfigFromFile(fabricConfigFile)
 	if err != nil {
 		log.Fatal("Cannot load fabric config")
 	}
 
-	lf := &loyalty_fabric.LoyaltyFabricClient{}
+	lf := &fabricHandler.LoyaltyFabricClient{}
 	lf.InitPeerClients(fabricConfig)
 	lf.InitSigners(fabricConfig)
 
@@ -128,7 +129,7 @@ func sendProposal(c *cli.Context) error {
 
 ///####### Copy funnction ########
 
-func DecodeChaincodeResponse(payload []byte, txID string) (chaincodeResponse *fabric.ChaincodeResponse, err error) {
+func DecodeChaincodeResponse(payload []byte, txID string) (chaincodeResponse *fabricType.ChaincodeResponse, err error) {
 
 	buf := bytes.NewBuffer(payload)
 	dec := gob.NewDecoder(buf)
@@ -151,7 +152,7 @@ func getChaincodeFunctionName(consensusType pb.RequestType) string {
 }
 
 func FabricConsensus(
-	lc loyalty_fabric.LoyaltyFabricAPI,
+	lc fabricHandler.LoyaltyFabricAPI,
 	traceNo string,
 	consensusType pb.RequestType,
 	chaincodeName string,
@@ -159,7 +160,7 @@ func FabricConsensus(
 	channelID string,
 	args []string,
 	dataBytes ...[]byte,
-) (*loyalty_fabric.ProposalResponse, error) {
+) (*fabricType.ProposalResponse, error) {
 	var err error
 	if config.BypassFabric {
 		return nil, nil
