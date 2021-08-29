@@ -440,7 +440,7 @@ func InvokeGenerator(ctx context.Context, generator *GeneratorInstance, funcName
 	out := new(pb.Response)
 
 	err := conn.Invoke(ctx, funcName, in, out, opts1...)
-	fmt.Println("response :", out)
+
 	if err != nil {
 		return nil, err
 	}
