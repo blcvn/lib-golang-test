@@ -5,9 +5,10 @@ import (
 	"log"
 	"os"
 	"os/signal"
-	"sharding_accounting/test/tls/spring"
 	"syscall"
 	"time"
+
+	"github.com/binhnt-teko/lib-golang-test/tls/spring"
 
 	pb "github.com/bbengfort/sping/echo"
 	"github.com/urfave/cli"
