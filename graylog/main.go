@@ -1,9 +1,10 @@
 package main
 
 import (
-	"lib-golang/graylog/gabs"
-	gelf "sharding_accounting/test/graylog/geft"
 	"time"
+
+	"github.com/binhnt-teko/lib-golang-test/graylog/gabs"
+	gelf "github.com/binhnt-teko/lib-golang-test/graylog/geft"
 )
 
 func main() {

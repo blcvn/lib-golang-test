@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"sharding_accounting/common/graylog"
+
+	"github.com/binhnt-teko/lib-golang-test/graylog"
 
 	"github.com/sirupsen/logrus"
 	log "github.com/sirupsen/logrus"
