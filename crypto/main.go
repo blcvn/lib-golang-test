@@ -4,7 +4,8 @@ import (
 	"encoding/hex"
 	"fmt"
 	"math/big"
-	"sharding_accounting/test/crypto/schnorr"
+
+	"github.com/binhnt-teko/lib-golang-test/crypto/schnorr"
 
 	"github.com/btcsuite/btcd/btcec"
 )

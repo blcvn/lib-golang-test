@@ -3,8 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/binhnt-teko/lib-golang-test/graylog"
-
+	"github.com/binhnt-teko/lib-golang-test/graylog/graylog"
 	"github.com/sirupsen/logrus"
 	log "github.com/sirupsen/logrus"
 )
