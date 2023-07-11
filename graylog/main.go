@@ -3,8 +3,8 @@ package main
 import (
 	"time"
 
-	"github.com/binhnt-teko/lib-golang-test/graylog/gabs"
-	gelf "github.com/binhnt-teko/lib-golang-test/graylog/geft"
+	"github.com/blcvn/lib-golang-test/graylog/gabs"
+	gelf "github.com/blcvn/lib-golang-test/graylog/geft"
 )
 
 func main() {

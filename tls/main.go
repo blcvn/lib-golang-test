@@ -8,7 +8,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/binhnt-teko/lib-golang-test/tls/spring"
+	"github.com/blcvn/lib-golang-test/tls/spring"
 
 	pb "github.com/bbengfort/sping/echo"
 	"github.com/urfave/cli"

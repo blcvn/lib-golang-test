@@ -7,7 +7,7 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/btcsuite/btcd/btcec"
+	"github.com/blcvn/lib-golang-test/crypto/btcec"
 )
 
 var (

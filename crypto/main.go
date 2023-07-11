@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/binhnt-teko/lib-golang-test/crypto/schnorr"
+	"github.com/blcvn/lib-golang-test/crypto/schnorr"
 
-	"github.com/btcsuite/btcd/btcec"
+	"github.com/blcvn/lib-golang-test/crypto/btcec"
 )
 
 func main() {
