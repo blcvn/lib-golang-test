@@ -1,0 +1,23 @@
+package consensus
+
+// Signer is an interface which wraps the Sign method.
+//
+// Sign signs message bytes and returns the signature or an error on failure.
+type Signer interface {
+	Sign(message []byte) ([]byte, error)
+}
+
+// Serializer is an interface which wraps the Serialize function.
+//
+// Serialize converts an identity to bytes.  It returns an error on failure.
+type Serializer interface {
+	Serialize() ([]byte, error)
+}
+
+//go:generate counterfeiter -o mocks/signer_serializer.go --fake-name SignerSerializer . SignerSerializer
+
+// SignerSerializer groups the Sign and Serialize methods.
+type SignerSerializer interface {
+	Signer
+	Serializer
+}

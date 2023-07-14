@@ -37,6 +37,7 @@ type raftNode struct {
 
 	id          int      // client ID for raft session
 	peers       []string // raft peer URLs
+	IsLearner   bool     //binhnt
 	join        bool     // node is joining an existing cluster
 	waldir      string   // path to WAL directory
 	snapdir     string   // path to snapshot directory

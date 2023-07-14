@@ -1,0 +1,2 @@
+# Start app 
+go run . 

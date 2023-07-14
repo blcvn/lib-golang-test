@@ -2,3 +2,7 @@ network*
 raft-data
 vendor/
 */vendor/*
+data/
+data
+*/data/*
+*/data
