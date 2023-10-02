@@ -1,5 +1,15 @@
 # Lib Golang Test
 
+
+# Folder structure: 
+## Connect:
+## Consensus:
+### Blocks 
+### peer:
+   
+### raft: 
+### raft-grpc:
+### raft3: 
 This project collected all test cases to test lib which will be used in products
 
 ## Config git with private account:
@@ -54,3 +64,8 @@ This is old mapping, please change to branchId which is mapping to `channel2` at
 # Conflict protobuf namespace 
 
 GOLANG_PROTOBUF_REGISTRATION_CONFLICT=warn
+
+
+# Export to gen 
+
+export PATH=$PATH:~/go/bin/
