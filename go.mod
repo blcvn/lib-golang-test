@@ -30,6 +30,7 @@ require (
 	github.com/mattermost/xml-roundtrip-validator v0.1.0
 	github.com/opensearch-project/opensearch-go v1.1.0
 	github.com/pkg/errors v0.9.1
+	github.com/pquerna/otp v1.4.0
 	github.com/prometheus/client_golang v1.16.0
 	github.com/russellhaering/gosaml2 v0.9.1
 	github.com/russellhaering/goxmldsig v1.4.0
@@ -81,6 +82,7 @@ require (
 	github.com/blevesearch/zapx/v13 v13.3.9 // indirect
 	github.com/blevesearch/zapx/v14 v14.3.9 // indirect
 	github.com/blevesearch/zapx/v15 v15.3.12 // indirect
+	github.com/boombuler/barcode v1.0.1-0.20190219062509-6c824513bacc // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
