@@ -1,0 +1,22 @@
+version: "3.0"
+
+services:
+    step-ca:
+        image: smallstep/step-ca
+        working_dir: /home/step
+        command: > 
+          bash -c step ca init &&
+          step-ca
+        restart: always
+        container_name: step-ca
+        networks:
+            - demo-ca
+        volumes:
+            - ./step:/home/step
+        ports:
+            - 1443:1443
+        environment:
+            TZ: "Asia/Ho_Chi_Minh"
+
+networks:
+  demo-ca:
