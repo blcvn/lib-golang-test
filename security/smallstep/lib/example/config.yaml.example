@@ -1,0 +1,3 @@
+CA:
+  URL: "127.0.0.1:1443"
+  CertValidDuration: "87600h"
